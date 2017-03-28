@@ -1,0 +1,294 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Grid Layout</title>
+    <link rel="stylesheet" href="highlight/styles/monokai-sublime.css">
+    <script src="highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" type="text/css" href="css/example.css">
+    <link rel="stylesheet" type="text/css" href="css/example_floats.css">
+    <link rel="stylesheet" type="text/css" href="css/example_flexbox.css">
+    <link rel="stylesheet" type="text/css" href="css/example_grid.css">
+</head>
+<body>
+    <section class="example" id="tables">
+        <div class="example__inner">
+            <h1>Very <i>very</i> oldschoolish</h1>
+            <div class="example__source">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="20" class="pink">
+                            <img src="spacer.gif" width="1" height="80" />
+                        </td>
+                        <td width="20" class="purple"></td>
+                        <td width="20" class="coral"></td>
+                        <td width="40" rowspan="2" class="red">
+                            <img src="spacer.gif" width="1" height="240" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20" class="turquoise" colspan="2"><img src="spacer.gif" width="1" height="120" /></td>
+                        <td width="20" class="lightskyblue"></td>
+                    </tr>
+                </table>
+            </div>
+            <figure class="example__code">
+                <pre><code class="html code">
+&lt;table width="100%" border="0"&gt;
+    &lt;tr&gt;
+        &lt;td width="20" bgcolor="pink"&gt;
+            &lt;img src="spacer.gif" width="1" height="80" /&gt;
+        &lt;/td&gt;
+        &lt;td width="20" bgcolor="purple"&gt;&lt;/td&gt;
+        &lt;td width="20" bgcolor="coral"&gt;&lt;/td&gt;
+        &lt;td width="40" rowspan="2" bgcolor="red"&gt;
+            &lt;img src="spacer.gif" width="1" height="240" /&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width="20" bgcolor="turquoise" colspan="2"&gt;&lt;img src="spacer.gif" width="1" height="120" /&gt;&lt;/td&gt;
+        &lt;td width="20" bgcolor="lightskyblue"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+                <figcaption>Codebeispiel1: Tables like it's 1999</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="example" id="floats">
+        <div class="example__inner">
+            <h1>Mission impossible: <i>floats</i></h1>
+            <div class="example__source">
+                <div class="floats">
+                    <div class="left">
+                        <div class="top">
+                            <div class="lefty pink"></div>
+                            <div class="lefty purple"></div>
+                            <div class="lefty coral"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="lefty turquoise"></div>
+                            <div class="lefty lightskyblue"></div>
+                        </div>
+                    </div>
+                    <div class="right red"></div>
+                </div>
+            </div>
+            <div class="example__flex">
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="html code">
+&lt;div class="floats"&gt;
+    &lt;div class="left"&gt;
+        &lt;div class="top"&gt;
+            &lt;div class="lefty"&gt;&lt;/div&gt;
+            &lt;div class="lefty"&gt;&lt;/div&gt;
+            &lt;div class="lefty"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="bottom"&gt;
+            &lt;div class="lefty"&gt;&lt;/div&gt;
+            &lt;div class="lefty"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="right"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <figcaption>Codebeispiel2: Floats – gonna hate 'em</figcaption>
+                </figure>
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="css code">
+.floats {
+    overflow: hidden;
+}
+.left, .right, .lefty {
+    float: left;
+}
+.left, .right {
+    height: 240px;
+}
+.left {
+    border-right: 1px solid #fff;
+    width: 80%
+}
+.right {
+    background: red;
+    width: 19%;
+}
+.top .lefty {
+    background: pink;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    float: left;
+    height: 120px;
+    width: 33.2%;
+}
+.top .lefty:nth-child(2) {
+    background: purple;
+}
+.top .lefty:last-child {
+    background: coral;
+    border-right: none;
+}
+.bottom .lefty {
+    background: turquoise;
+    border-right: 1px solid #fff;
+    float: left;
+    height: 120px;
+    width: 66.5%;
+}
+.bottom .lefty:last-child {
+    background: lightskyblue;
+    width: 33.2%;
+}
+                    </code></pre>
+                    <figcaption>Codebeispiel3: Floats – gonna hate 'em</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="example" id="flexbox">
+        <div class="example__inner">
+            <h1>Schon wieder alt: <i>flexbox</i></h1>
+            <div class="example__source">
+                <div class="flexbox">
+                    <div class="leftbox">
+                        <div class="box">
+                            <div class="pink"></div>
+                        </div>
+                        <div class="box">
+                            <div class="purple"></div>
+                        </div>
+                        <div class="box">
+                            <div class="coral"></div>
+                        </div>
+                        <div class="box">
+                            <div class="turquoise"></div>
+                        </div>
+                        <div class="box">
+                            <div class="lightskyblue"></div>
+                        </div>
+                    </div>
+                    <div class="rightbox">
+                        <div class="red"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="example__flex">
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="html code">
+&lt;div class="flexbox"&gt;
+    &lt;div class="leftbox"&gt;
+        &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;div class="box"&gt;&lt;/div&gt;
+        &lt;div class="box"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="rightbox"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <figcaption>Codebeispiel4: Flexbox</figcaption>
+                </figure>
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="css code">
+.flexbox {
+    display: flex;
+    height: 240px;
+}
+.leftbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.rightbox {
+    background: red;
+    flex-grow: 1;
+    height: 100%;
+    margin: 1px 0 0 1px;
+}
+.box {
+    flex-grow: 1;
+    height: 120px;
+    padding: 1px 0 0 1px;
+    /*margin: 0 1px 1px 0;*/
+}
+/* add linefeed before 4th box */
+.leftbox::after, .leftbox::before {
+    content: "";
+    width: 100%;
+}
+.box:nth-child(4) {
+    flex-grow: 2;
+    order: 1;
+}
+.box:nth-child(5) {
+    order: 2;
+}
+                    </code></pre>
+                    <figcaption>Codebeispiel5: Flex CSS</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="example" id="grid">
+        <div class="example__inner">
+            <h1>Neuer Besen: <i>Grid</i></h1>
+            <div class="example__source">
+                <div class="grid-container">
+                    <div class="item item-1"><div class="pink"></div></div>
+                    <div class="item item-2"><div class="purple"></div></div>
+                    <div class="item item-3"><div class="coral"></div></div>
+                    <div class="item item-4"><div class="turquoise"></div></div>
+                    <div class="item item-5"><div class="lightskyblue"></div></div>
+                    <div class="item item-6"><div class="red"></div></div>
+                </div>
+            </div>
+            <div class="example__flex">
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="html code">
+&lt;div class="grid-container"&gt;
+    &lt;div class="item item-1"&gt;&lt;/div&gt;
+    &lt;div class="item item-2"&gt;&lt;/div&gt;
+    &lt;div class="item item-3"&gt;&lt;/div&gt;
+    &lt;div class="item item-4"&gt;&lt;/div&gt;
+    &lt;div class="item item-5"&gt;&lt;/div&gt;
+    &lt;div class="item item-6"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <figcaption>Codebeispiel6: Minimal Code</figcaption>
+                </figure>
+                <figure class="example__code example__code--flexitem">
+                    <pre><code class="css code">
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 94px 142px;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    grid-template-areas: "a b c d d"
+                         "e e f d d";
+}
+.item-1 {
+    grid-area: a;
+}
+.item-2 {
+    grid-area: b;
+}
+.item-4 {
+    grid-area: e;
+}
+.item-5 {
+    grid-area: f;
+}
+.item-6 {
+    grid-area: d;
+}
+                    </code></pre>
+                    <figcaption>Minimal CSS</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

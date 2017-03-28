@@ -1,0 +1,38 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 94px 142px;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    grid-template-areas: "a b c d d"
+                         "e e f d d";
+}
+.item-1 {
+    grid-area: a;
+}
+.item-2 {
+    grid-area: b;
+}
+.item-4 {
+    grid-area: e;
+}
+.item-5 {
+    grid-area: f;
+}
+.item-6 {
+    grid-area: d;
+}
+.item {
+    position: relative;
+}
+.item > div {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.box .pink, .box .purple, .box .coral, .rightbox .red, .box .turquoise, .box .lightskyblue{
+    height: 100%;
+    width: 100%;
+}
