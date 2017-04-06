@@ -7,6 +7,10 @@ body {
     margin: 0;
     padding: 0;
 }
+img {
+    border: none;
+    display: block;
+}
 .example {
     min-height: 100vh;
     padding-bottom: 40px;
@@ -70,4 +74,12 @@ body {
 }
 .lightskyblue {
     background: linear-gradient(135deg, #e3e3e3, lightskyblue);
+}
+
+.box {
+    align-items: center;
+    background: orange;
+    display: flex;
+    font-size: 22px;
+    justify-content: center;
 }

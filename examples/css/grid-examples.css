@@ -1,20 +1,3 @@
-.item {
-    position: relative;
-}
-.item > div {
-    align-items: center;
-    display: flex;
-    font-size: 1.6rem;
-    font-weight: 700;
-    justify-content: center;
-}
-.item > p {
-    background: orange;
-    height: 70px;
-    margin: 0;
-    width: 75%;
-}
-
 .example1 .grid-container {
     display: grid;
     grid-gap: 10px;
@@ -26,9 +9,8 @@
 .example2 .grid-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 140px);
-    grid-auto-flow: column;
+    grid-auto-flow: column; /* row; */
 }
 
 
@@ -49,36 +31,39 @@
                          "main main sidebar"
                          "footer footer copyright";
 }
-.example4 .item-1 {
+.example4 .box-1 {
     grid-area: header;
 }
-.example4 .item-2 {
+.example4 .box-2 {
     grid-area: main;
 }
-.example4 .item-3 {
+.example4 .box-3 {
     grid-area: sidebar;
 }
-.example4 .item-4 {
+.example4 .box-4 {
     grid-area: footer;
 }
-.example4 .item-5 {
+.example4 .box-5 {
     grid-area: copyright;
 }
 
-.example5 .grid-container, .example6 .grid-container {
-    background: #ccc;
+.example5 .grid-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-rows: repeat(2, 140px);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
 }
-
-.example5 .grid-container {
-    align-items: start;
-}
-
-.example5 .item,
-.example6 .item {
-    background-color: #fff;
+@supports (display: contents) {
+    .example5 .box1 {
+       display: contents;
+       grid-column-end: 4;
+       grid-column-start: 1;
+    }
+    .example5 .nested {
+        align-items: center;
+        background: gold;
+        display: flex;
+        font-size: 22px;
+        justify-content: center;
+    }
 }
